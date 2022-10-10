@@ -1,0 +1,99 @@
+<div id="demo-1" data-zs-src='["1.jpg","2.jpg"]' data-zs-overlay="dots" class="banner-inner">
+    <div class="demo-inner-content">
+        <div class="header-top">
+
+            <div class="search-box">
+
+
+                <ul>
+                    <li><button type="button" class="btn btn-info"><a href="/">Home</a></button></li>
+                    <li><button type="button" class="btn btn-danger"><a href="/login">Login</a></button></li>
+                    <li><button type="button" class="btn btn-warning"><a href="/register">Register</a></button></li>
+                </ul>
+
+            </div>
+            <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">	
+				<h2 ><a href="#">Hospital Finder </a></h2>
+			</div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+<div *ngIf="!searchby">
+    <div class="service-breadcrumb w3-agile">
+        <div class="container">
+            <div class="wthree_service_breadcrumb_left">
+                <ul>
+                    <li><a href="/">Home</a> </li> | 
+                    <li>View Details</li>
+                </ul>
+            </div>
+            <div class="wthree_service_breadcrumb_right">
+                <h3>{{hospitals.name}}</h3>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    
+    <div class="col-md-12 single-left text-center" style="background: linear-gradient(rgb(177, 238, 233),rgb(71, 205, 238),rgb(97, 148, 224));">
+     
+        <div class="single-left2">
+            <h3><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>{{hospitals.address}},{{hospitals.city}}</h3>
+            <img src="assets/images/{{hospitals.image}}" style = "height:200px;width:auto;" alt="Catchy Carz">
+		
+            <ul class="com" style="background-color: white;">
+                <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span><a href="#">{{hospitals.username}}</a></li>
+                <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:{{hospitals.email}}">{{hospitals.email}}</a></li>
+                <li><span class="glyphicon glyphicon-road" aria-hidden="true"></span><a href="#">{{hospitals.city}}</a></li>
+              
+            </ul>
+            <div class="single-left2-sub">
+                <ul>
+                    <li>Speciality </li>
+                    <li><a href="#">{{hospitals.speciality}}</a></li>
+                    
+                </ul>
+            </div>
+            <div class="single-left2-sub">
+                <ul>
+                    <li>Doctor </li>
+                    <li><a href="#">{{hospitals.doctor}}</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+      
+       
+     
+    </div>
+</div> 
+
+<div *ngIf="searchby">
+    <div class="section__content clearfix">
+        <!-- /card1 -->
+        <div class="card" *ngFor="let hospital of bycity">
+            <div class="card__front">
+                <span class="card__text">
+                    <div class="img-grid">
+                        <img src="assets/images/{{hospital.image}}" alt="Catchy Carz" style="height: 100px; width: 100px;">
+                        <div class="car_description">
+                            <h4><a href="/view?id={{hospital._id}}">{{hospital.name}}</a></h4>
+                            <p>{{hospital.address}}, {{hospital.city}}</p>
+
+                            <p>{{hospital.speciality}}</p>
+                            <p>{{hospital.doctor}}</p>
+                        </div>
+
+                    </div>
+                </span>
+            </div>
+
+        </div>
+
+        <!-- //card1 -->
+
+        <!-- //card3 -->
+    </div>
+</div>

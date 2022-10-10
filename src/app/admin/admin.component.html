@@ -1,0 +1,63 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container">
+	<div class="row">
+	    
+	    
+<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	    
+
+
+
+<!-- LIST -->
+<div class=col-md-12>
+    
+    <form id="form-list-client">
+            <legend>Hospitals</legend>
+    
+    <div class="pull-right">
+        <a class="btn btn-default-btn-xs btn-primary"><i class="glyphicon glyphicon-refresh"></i> Refresh</a>
+        <a class="btn btn-default-btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i> New</a>
+    </div>
+    
+    <table class="table table-bordered table-condensed table-hover">
+        
+        <thead>
+            <tr>
+                <th>Hospital Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Action</th>
+            </tr>
+                
+        </thead>
+        
+        <tbody id="form-list-client-body" *ngFor="let hospital of hospitals">
+            
+            <tr>
+                <td>{{hospital.name}}</td>
+                <td>{{hospital.email}}</td>
+                <td>{{hospital.address}}</td>
+                <td>{{hospital.city}}</td>
+                <td>
+                    <a title="edit this user" class="btn btn-default btn-sm "> <i class="glyphicon glyphicon-edit text-primary"></i> </a>
+                    <a title="delete this user" class="btn btn-default btn-sm "> <i class="glyphicon glyphicon-trash text-danger"></i> </a>
+                </td>
+            </tr>
+        
+        </tbody>
+    
+    </table>
+    
+    </form>
+
+    
+</div>
+
+

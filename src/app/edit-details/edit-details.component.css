@@ -1,0 +1,16 @@
+@import "../../assets/css/bootstrap.css";
+@import "../../assets/css/tagin.css";
+@import "../../assets/css/zoomslider.css";
+@import "../../assets/css/component.css";
+@import "../../assets/css/light-carousel.css";
+#demo-1{
+    background: linear-gradient(rgb(7, 63, 128),rgb(71, 205, 238),rgb(199, 214, 218));
+
+}
+#demo-1{
+    min-height: 10px!important;
+}
+.invalid-feedback{
+    color:red;
+}
+@import "../../assets/css/style.css";

@@ -1,0 +1,122 @@
+<div id="demo-1">
+
+
+
+
+
+	<div class="bg">
+		<img src="assets\images\ha1.gif" class="a1">
+		<img src="assets\images\ha2.gif" class="a2">
+	</div>
+
+
+
+	<div class="demo-inner-content">
+		<div class="header-top">
+			<div style="position: absolute; top: 40px; left:700px; ">
+				<img src="assets\images\logoo.gif" style="border-radius: 50%;" height="150px" width="150px">
+			</div>
+			<div class="search-box">
+
+
+				<ul>
+
+
+
+					<li> <button type="button" class="btn btn-success"><a href="/login"> Login</a> </button></li>
+
+
+					<li> <button type="button" class="btn btn-warning"><a href="/register"> Register</a></button> </li>
+				</ul>
+
+
+
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+
+		<!--banner-info-->
+		<div class="banner-info">
+
+			<form [formGroup]="searchForm" (ngSubmit)="search()">
+				<div class="search-two">
+					<select id="country" class="frm-field required" formControlName="name">
+						<option value="">Select Hospital to visit</option>
+						<option *ngFor="let hospital of hospitals" value="{{hospital._id}}">{{hospital.name}}
+						</option>
+
+
+					</select>
+				</div>
+				<div class="section_room">
+					<!-- dropdown menu for city  -->
+					<select formControlName="city" id="country" class="frm-field required">
+						<option value=""> City </option>
+						<option *ngFor="let c of city" value={{c}}>{{c}}</option>
+
+					</select>
+				</div>
+
+				<input type="submit" value="Find Hospital">
+
+
+				<div class="clearfix"></div>
+			</form>
+		</div>
+		<!--//banner-info-->
+	</div>
+</div>
+<!--/featured_section-->
+<div class="featured_section_w3l">
+	<div class="container">
+		<h3 class="tittle">Some Featured Hospital</h3>
+		
+		<div class="inner_tabs">
+			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+				
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tab-pane fade in active" id="expeditions"
+						aria-labelledby="expeditions-tab">
+						<div class="section__content clearfix">
+							<!-- /card1 -->
+							<div class="card" *ngFor="let hospital of hospitals.slice(0,3)">
+								<div class="card__front">
+									<span class="card__text">
+										<div class="img-grid">
+											<img src="assets/images/{{hospital.image}}">
+											<div class="car_description" style="padding: 10px;">
+												<h4><a href="/view?id={{hospital._id}}">{{hospital.name}}</a></h4>
+												<p>{{hospital.address}}, {{hospital.city}}</p>
+
+												<p>{{hospital.speciality}}</p>
+												<p>{{hospital.doctor}}</p>
+											</div>
+
+										</div>
+									</span>
+								</div>
+
+							</div>
+
+							<!-- //card1 -->
+
+							<!-- //card3 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="footer">
+	<div class="container">
+
+		<div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
+			<h2><a href="#">Hospital Finder </a></h2>
+		</div>
+
+	</div>
+</div>
